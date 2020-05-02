@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <script src="https://kit.fontawesome.com/afd9c31c73.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: verdana;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .active {
+      height: auto;
+      overflow: auto;
+    }
+
+    div.indicator {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 10px;
+      width: 0;
+      background-color: seagreen;
+      transition: .2s linear;
+    }
+
+    .wrapper {
+      width: 80%;
+      margin: 50px auto;
+    }
+
+    img {
+      margin-top: 50px;
+      width: 100%;
+    }
+
+    .blur {
+      filter: blur(10px);
+    }
+
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal main {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 30vh;
+      width: 80vw;
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .modal main p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-basis: 30%;
+      background-color: #444;
+      font-size: 25px;
+      text-transform: uppercase;
+      border-bottom: 2px solid orangered;
+      color: white;
+    }
+
+    .modal main .form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+      background-color: #eee;
+    }
+
+    .modal main .form button {
+      background-color: #444;
+      color: white;
+      border: 1px solid orangered;
+      height: 30px;
+      width: 50px;
+      display: block;
+      animation: 4s OKAnimation linear infinite
+    }
+
+    .modal main .form .name {
+      display: block;
+      height: 30px;
+      border: none;
+      overflow: hidden;
+      padding-left: 10px;
+    }
+
+    .modal main .form .name:focus {
+      color: #444
+    }
+
+    .modal main .exit {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      font-size: 35px;
+      color: white;
+      transition: .1s
+    }
+
+    .modal main .exit:hover {
+      color: orangered
+    }
+
+    @media (orientation: portrait) {
+      .modal main {
+        height: 20vh;
+        width: 90vw;
+      }
+
+      .modal main p {
+        font-size: 20px;
+      }
+
+      .modal main .exit {
+        top: 2px;
+        right: 5px;
+        font-size: 22px;
+      }
+    }
+
+    @keyframes OKAnimation {
+      0% {
+        color: white
+      }
+
+      20% {
+        color: white
+      }
+
+      40% {
+        color: orangered
+      }
+
+      60% {
+        color: orangered
+      }
+
+      80% {
+        color: white
+      }
+
+      100% {
+        color: white
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper blur">
+    <div class="indicator"></div>
+    <h1>
+      <center>Witam serdecznie<span id="nazwaUzytkownika"></span>!</center>
+    </h1>
+    <main>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus corporis dolores totam ratione hic earum repellat, eligendi quisquam tempora perspiciatis a modi minus architecto itaque sit temporibus dolor qui. Dolor natus voluptas illo fugit facere rerum eligendi laudantium laborum, fuga fugiat ex unde qui neque repellat possimus veritatis temporibus, doloremque accusantium? Tenetur exercitationem rerum, error qui totam. Eveniet odio nulla assumenda incidunt necessitatibus nisi enim possimus illum perspiciatis, quaerat ipsum magni. Cum consectetur, itaque. Voluptatem nam, sit cum illo quo molestias minima placeat accusantium fugit perspiciatis obcaecati soluta saepe quasi temporibus alias excepturi fugiat optio officia error. Assumenda, aliquid, officiis.</p>
+    </main>
+    <img src="https://cdn.pixabay.com/photo/2020/02/13/10/29/bees-4845211_960_720.jpg" alt="">
+    <main>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus corporis dolores totam ratione hic earum repellat, eligendi quisquam tempora perspiciatis a modi minus architecto itaque sit temporibus dolor qui. Dolor natus voluptas illo fugit facere rerum eligendi laudantium laborum, fuga fugiat ex unde qui neque repellat possimus veritatis temporibus, doloremque accusantium? Tenetur exercitationem rerum, error qui totam. Eveniet odio nulla assumenda incidunt necessitatibus nisi enim possimus illum perspiciatis, quaerat ipsum magni. Cum consectetur, itaque. Voluptatem nam, sit cum illo quo molestias minima placeat accusantium fugit perspiciatis obcaecati soluta saepe quasi temporibus alias excepturi fugiat optio officia error. Assumenda, aliquid, officiis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ratione fugit mollitia molestias, voluptates soluta laudantium maxime, quod ipsum architecto, incidunt ex ullam distinctio facilis tempore modi quo reiciendis tempora magnam deserunt ipsa? Excepturi, labore saepe. Ullam ratione debitis nulla repudiandae culpa. Ipsa incidunt libero asperiores recusandae corrupti amet ut quidem voluptas quas voluptates vitae ad, praesentium nobis quos provident enim atque explicabo ipsam distinctio eligendi labore, dolore iste eveniet. A magnam iure aliquam cupiditate, quod fuga incidunt. Consectetur aliquid ipsum, voluptatem vel, perspiciatis necessitatibus ad rerum maiores dolore neque quos tempore incidunt laudantium accusantium ab, tempora et cumque quidem. Sit eos, nobis pariatur temporibus consequuntur, quas qui eaque maiores magnam impedit natus autem blanditiis soluta excepturi, officiis veritatis totam minima sapiente at ab. Porro voluptate amet ducimus aut dignissimos accusamus cupiditate, molestiae doloribus perspiciatis architecto unde nesciunt reiciendis iusto ipsum tempora labore, accusantium delectus quod placeat blanditiis eum. Voluptate nemo quaerat fugiat perferendis tenetur dolore ducimus voluptatibus, facilis quia odio atque exercitationem libero cumque nulla incidunt voluptas, odit itaque repudiandae blanditiis! Repudiandae repellat odit deleniti magni quae, incidunt veniam quos accusamus explicabo! Error unde incidunt, ratione. Cumque voluptates pariatur minima tempore hic fuga consectetur, dolor suscipit, velit nihil possimus.</p>
+    </main>
+
+  </div>
+  <div class="modal">
+    <main>
+      <div class="exit"><i class="far fa-times-circle"></i></div>
+      <p>Podaj swoje imię</p>
+      <div class="form">
+        <input class="name" type="text" value="">
+        <button>OK</button></div>
+    </main>
+  </div>
+
+  <script>
+    const btn = document.querySelector('button')
+    const username = document.querySelector('#nazwaUzytkownika')
+    const typeUser = document.querySelector('.name')
+    const wrapper = document.querySelector('div.wrapper')
+    const exitModal = document.querySelector('.exit')
+    const body = document.querySelector('body')
+
+    function firstStep() {
+      username.textContent = ' ' + typeUser.value;
+      wrapper.classList.remove('blur')
+      body.classList.add('active')
+      document.querySelector('.modal').style.display = 'none'
+    }
+
+    btn.addEventListener('click', firstStep)
+    exitModal.addEventListener('click', function() {
+      document.querySelector('.modal').style.display = 'none'
+      wrapper.classList.remove('blur')
+      body.classList.add('active')
+    })
+  </script>
+  <script>
+    //indicator 
+    const indicator = document.querySelector('.indicator')
+
+    function indicatorLevel() {
+      indicator.style.width = window.scrollY / (document.documentElement.offsetHeight - window.innerHeight) * 100 + '%'
+    }
+    window.addEventListener('scroll', indicatorLevel)
+  </script>
+</body></html>
